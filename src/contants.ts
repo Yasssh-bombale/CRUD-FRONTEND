@@ -1,0 +1,42 @@
+export const Users = [
+  {
+    _id: "1",
+    userName: "Yash bombale",
+    phoneNumber: "8421883257",
+    email: "yashbombale@gmail.com",
+    hobbies: "reading,writing,gaming,coding,talking with friends and family",
+    isEditable: false,
+  },
+  {
+    _id: "2",
+    userName: "Yash bombale",
+    phoneNumber: "8421883257",
+    email: "yashbombale@gmail.com",
+    hobbies: "reading,writing,gaming,coding,talking with friends and family",
+    isEditable: false,
+  },
+  {
+    _id: "3",
+    userName: "Yash bombale",
+    phoneNumber: "8421883257",
+    email: "yashbombale@gmail.com",
+    hobbies: "reading,writing,gaming,coding,talking with friends and family",
+    isEditable: false,
+  },
+  {
+    _id: "4",
+    userName: "Yash bombale",
+    phoneNumber: "8421883257",
+    email: "yashbombale@gmail.com",
+    hobbies: "reading,writing,gaming,coding,talking with friends and family",
+    isEditable: false,
+  },
+  {
+    _id: "5",
+    userName: "Yash bombale",
+    phoneNumber: "8421883257",
+    email: "yashbombale@gmail.com",
+    hobbies: "reading,writing,gaming,coding,talking with friends and family",
+    isEditable: false,
+  },
+];
