@@ -4,11 +4,12 @@ import TableHeading from "./components/TableHeading";
 import TableRows from "./components/TableRows";
 import { Users } from "./contants";
 import { User } from "./types";
+import NoRows from "./components/NoRows";
 
 function App() {
   const [users, setUsers] = useState<User[]>(Users);
 
-  const deleteRowHanlder = (userId: string) => {
+  const deleteRowHanlder: any = (userId: string) => {
     setUsers((prevUsers) => prevUsers.filter((user) => user._id !== userId));
   };
 
@@ -25,7 +26,7 @@ function App() {
         <TableHeading />
 
         {/* table content */}
-        {users.length !== 0 &&
+        {/* {users.length !== 0 &&
           users.map((user, index) => (
             <TableRows
               key={user._id}
@@ -34,7 +35,20 @@ function App() {
               deleteRow={deleteRowHanlder}
               lastIndex={lastIndex}
             />
-          ))}
+          ))} */}
+        {users.length === 0 ? (
+          <NoRows />
+        ) : (
+          users.map((user, index) => (
+            <TableRows
+              key={user._id}
+              user={user}
+              index={index}
+              deleteRow={deleteRowHanlder}
+              lastIndex={lastIndex}
+            />
+          ))
+        )}
       </div>
     </div>
   );

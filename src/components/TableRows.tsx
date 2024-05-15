@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Save, SquarePen, Trash2 } from "lucide-react";
 import { EditableUser, User } from "@/types";
+import PopUpForm from "./PopUpForm";
 
 export type Props = {
   user: User;
@@ -121,7 +122,7 @@ const TableRows = ({ user, index, lastIndex, deleteRow }: Props) => {
             <Trash2 className="" />
           </Button>
           {/* add */}
-          {index === lastIndex && <Button className="">Add new</Button>}
+          {index === lastIndex && <PopUpForm />}
           {/* <Button className="">Add new</Button> */}
         </div>
       )}
