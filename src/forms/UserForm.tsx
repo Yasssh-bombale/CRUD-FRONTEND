@@ -1,3 +1,4 @@
+import { useCreateUser } from "@/apis/user-apis";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -8,6 +9,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { User } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -32,13 +34,18 @@ const formSchema = z.object({
 
 export type userFormSchemaObject = z.infer<typeof formSchema>;
 
-const UserForm = () => {
+type Props = {
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>;
+};
+
+const UserForm = ({ setUsers }: Props) => {
   const form = useForm<userFormSchemaObject>({
     resolver: zodResolver(formSchema),
   });
+  const { createUserRequest } = useCreateUser(setUsers);
 
-  const onSave = (formData: userFormSchemaObject) => {
-    console.log(formData);
+  const onSave = async (formData: userFormSchemaObject) => {
+    await createUserRequest(formData);
   };
 
   return (

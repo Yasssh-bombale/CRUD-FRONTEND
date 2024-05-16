@@ -2,14 +2,20 @@ import UserForm from "@/forms/UserForm";
 import { Button } from "./ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
+import { User } from "@/types";
 
-const PopUpForm = () => {
+type Props = {
+  setUsers: React.Dispatch<React.SetStateAction<User[]>>;
+};
+
+const PopUpForm = ({ setUsers }: Props) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -22,7 +28,10 @@ const PopUpForm = () => {
         </DialogHeader>
 
         {/* handling user form in <UserForm/> component */}
-        <UserForm />
+        <UserForm setUsers={setUsers} />
+        <DialogClose asChild>
+          <Button type="button">Close</Button>
+        </DialogClose>
       </DialogContent>
     </Dialog>
   );
