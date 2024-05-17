@@ -85,7 +85,7 @@ function App() {
             />
           ))} */}
         {users.length === 0 ? (
-          <NoRows />
+          <NoRows setUsers={setUsers} />
         ) : (
           users.map((user, index) => (
             <TableRows
