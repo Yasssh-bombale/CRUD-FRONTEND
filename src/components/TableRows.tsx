@@ -61,8 +61,8 @@ const TableRows = ({
   };
 
   return (
-    <div className="flex items-center w-full border border-green-500 px-2">
-      <div className="border flex p-2 items-center gap-x-16 flex-1">
+    <div className="flex items-center w-full border border-[#212121] rounded-md px-2">
+      <div className="flex p-2 items-center gap-x-16 flex-1">
         <div className="flex items-center gap-x-4">
           <input
             checked={selectedUsers.includes(user)}

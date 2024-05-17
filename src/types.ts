@@ -4,6 +4,9 @@ export type User = {
   phoneNumber: string;
   email: string;
   hobbies: string;
+  createdAt?: string;
+  updatedAt?: string;
+  __v?: number;
 };
 export type EditableUser = {
   userName: string;

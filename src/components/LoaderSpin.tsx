@@ -1,10 +1,17 @@
 import { Loader } from "lucide-react";
+import { Button } from "./ui/button";
 
-const LoaderSpin = () => {
+type Props = {
+  text: string;
+  className?: string;
+};
+
+const LoaderSpin = ({ text, className }: Props) => {
   return (
-    <div>
-      <Loader className="h-4 w-16 animate-spin" />
-    </div>
+    <Button className={`${className}`}>
+      <Loader className="h-4 w-4 mr-2 animate-spin" />
+      {text}
+    </Button>
   );
 };
 
